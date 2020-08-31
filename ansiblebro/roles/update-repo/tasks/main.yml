@@ -1,0 +1,6 @@
+---
+# tasks file for update-repo
+- name: Updating repos                 #updates the server with all the latest packages
+  yum:
+    name: "*"
+    state: latest

@@ -1,0 +1,4 @@
+---
+# tasks file for wget
+- name: install wget      # insatll wget to fetch latest maven.
+  shell: yum install wget -y

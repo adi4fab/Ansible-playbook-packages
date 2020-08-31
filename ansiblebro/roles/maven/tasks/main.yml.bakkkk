@@ -1,0 +1,22 @@
+---
+# tasks file for maven
+- name: download maven and install
+  shell: |
+    mkdir /opt/maven       
+    cd /opt/maven
+    wget {{mavenlink}}
+    tar -xvzf {{maven}}-bin.tar.gz
+- name: Maven path configuration
+  lineinfile:
+    dest: /etc/environment
+    state: present
+    regexp: '^M2_HOME'
+    line: 'M2_HOME=/opt/maven/{{maven}}'
+- name: Maven path configuration
+  lineinfile:
+    dest: /etc/environment
+    state: present
+    regexp: '^M2'
+    line: 'M2=M2_HOME/bin'
+
+      

@@ -1,0 +1,12 @@
+---
+  - name: Install packages on Linux 
+    hosts: all
+    gather_facts: false
+    become: true
+    roles:
+      - update-repo
+      - wget
+      - docker
+      - node_npm     
+      - java      
+      - maven

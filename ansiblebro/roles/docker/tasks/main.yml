@@ -1,0 +1,6 @@
+---
+# tasks file for docker
+- name: install the latest version of Docker
+  yum:
+    name: docker
+    state: latest

@@ -1,0 +1,12 @@
+---
+# tasks file for maven
+- name: download and install maven
+  get_url:
+          url: "{{mavenlink}}"
+          dest: /opt/{{maven}}-bin.tar.gz
+
+- name: untar
+  shell: chdir=/opt/ creates=/opt/{{maven}} tar -zxf {{maven}}.tar.gz -C /opt
+
+- name: update path
+  shell: echo "PATH=$PATH:/opt/{{maven}}/bin" > /etc/environment  

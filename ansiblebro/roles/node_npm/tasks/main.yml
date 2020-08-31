@@ -1,0 +1,13 @@
+---
+# tasks file for node_npm
+- name: install npm repo
+  shell: curl -sL {{node_version}} | bash -
+          
+          
+- name: Install npm dependiencies
+  yum:
+    name:
+      - nodejs
+      - gcc-c++
+      - make
+    state: latest
